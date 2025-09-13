@@ -1,3 +1,4 @@
+use futarchy_amm_jup_sdk::FutarchyAmmClient;
 use jupiter_amm_interface::{AccountMap, AmmContext, ClockRef, Swap, SwapMode};
 use jupiter_core::{
     amm::Amm,
@@ -150,12 +151,14 @@ macro_rules! test_exact_out_amms {
 
 const ORCA_V2_SOL_USDC_POOL: Pubkey = pubkey!("EGZ7tiLeH62TPV1gL8WwbXGzEPa9zmcpVnnkPKKnrE2U");
 const ORCA_V2_USDC_USDT_POOL: Pubkey = pubkey!("F13xvvx45jVGd84ynK3c8T89UejQVxjCLtmHfPmAXAHP");
+const FUTARCHY_AMM_DUMMY_POOL: Pubkey = pubkey!("E3BjsvLSFqUqVtDP76qMw4QbETkxvqvg8RTSbRZxWCK4");
 
 // You can run a single test by doing: `cargo test test_quote_<lower_case_constant>_<default | option_name> -- --nocapture`
 
 test_exact_in_amms! {
     (ORCA_V2_SOL_USDC_POOL, SplTokenSwapAmm, None),
     (ORCA_V2_USDC_USDT_POOL, SplTokenSwapAmm, None),
+    (FUTARCHY_AMM_DUMMY_POOL, FutarchyAmmClient, None),
 }
 
 #[allow(clippy::too_many_arguments)]
