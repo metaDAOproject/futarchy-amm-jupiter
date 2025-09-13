@@ -411,9 +411,9 @@ dependencies = [
 
 [[package]]
 name = "anyhow"
-version = "1.0.98"
+version = "1.0.99"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "e16d2d3311acee920a9eb8d33b8cbc1787ce4a264e85f964c2404b969bdcd487"
+checksum = "b0674a1ddeecb70197781e945de4b3b8ffb61fa939a5597bcf48503737663100"
 
 [[package]]
 name = "ark-bn254"
@@ -1439,6 +1439,18 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "e6d5a32815ae3f33302d95fdcb2ce17862f8c65363dcfd29360480ba1001fc9c"
 
 [[package]]
+name = "futarchy-amm-jup-sdk"
+version = "0.1.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "02625bf6e5e5049dc46011d8bea289efd0a5ac22d41ae8c58248b6acd03ba51a"
+dependencies = [
+ "anchor-lang",
+ "anyhow",
+ "jupiter-amm-interface",
+ "rust_decimal",
+]
+
+[[package]]
 name = "futures"
 version = "0.3.31"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2112,6 +2124,7 @@ dependencies = [
  "async-trait",
  "bincode",
  "clap",
+ "futarchy-amm-jup-sdk",
  "glob",
  "itertools 0.12.1",
  "jupiter-aggregator-common",

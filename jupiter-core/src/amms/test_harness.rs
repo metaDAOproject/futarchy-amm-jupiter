@@ -74,6 +74,14 @@ pub static SPL_TOKEN_MINT_TO_IN_AMOUNT: LazyLock<HashMap<Pubkey, u64>> = LazyLoc
             pubkey!("Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB"),
             1_110_000_000,
         ),
+        (
+            pubkey!("9uUsek16PojfDyrM6pb5cWiv5DV2Qk2Z8wc1gp4GsuG9"),
+            100 * 1_000_000,
+        ),
+        (
+            pubkey!("JBqfRDVRdGNBJMm7WqJxgfbkn8CPrLxFaD257XA3gn8p"),
+            100 * 1_000_000,
+        ),
     ])
 });
 
@@ -780,7 +788,7 @@ impl AmmTestAccountsSnapshot {
         addresses_for_snapshot.insert(sysvar::last_restart_slot::ID);
 
         let snapshot_path_string = format!(
-            "tests/fixtures/accounts/{}",
+            "jupiter-core/tests/fixtures/accounts/{}",
             snapshot_directory_name(amm.key(), option)
         );
         let snapshot_path = Path::new(&snapshot_path_string);
